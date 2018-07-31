@@ -4,7 +4,7 @@ var config = require('./config');
 
 var connection = mysql.createConnection({
     host: "localhost",
-    port: 3306,
+    port: 8889,
     user: "root",
     password: config.pass,
     database: "burgers_db"
