@@ -1,7 +1,7 @@
 var connection = require("./connection");
 
 function objToSql(ob) {
-    //column1=value, column2=value2,...
+
     var arr = [];
 
     for (var key in ob) {
@@ -12,35 +12,35 @@ function objToSql(ob) {
 }
 
 var orm = {
-    selectAll: function (tableInput, cb) {
-        var queryString = 'SELECT * FROM ' + tableInput + ';';
-        connection.query(queryString, function (err, result) {
+    selectAll: function (input, cb) {
+        var queryStr = 'SELECT * FROM ' + input + ';';
+        connection.query(queryStr, function (err, result) {
             if (err) throw err;
             cb(result);
         });
     },
-    insertOne: function (tableInput, burgerName, devoured, cb) {
-        var queryString = 'INSERT INTO ' + tableInput + ' (burger_name, devoured) ';
-        queryString += 'VALUES ("' + burgerName + '", ' + devoured + ');';
+    create: function (input, burgerName, devoured, cb) {
+        var queryStr = 'INSERT INTO ' + input + ' (burger_name, devoured) ';
+        queryStr += 'VALUES ("' + burgerName + '", ' + devoured + ');';
 
-        console.log(queryString);
+        console.log(queryStr);
 
-        connection.query(queryString, function (err, result) {
+        connection.query(queryStr, function (err, result) {
             if (err) throw err;
             cb(result);
         });
     },
-    updateOne: function (table, objColVals, condition, cb) {
-        var queryString = 'UPDATE ' + table;
+    update: function (table, objColVals, condition, cb) {
+        var queryStr = 'UPDATE ' + table;
 
-        queryString += ' SET ';
-        queryString += objToSql(objColVals);
-        queryString += ' WHERE ';
-        queryString += condition;
+        queryStr += ' SET ';
+        queryStr += objToSql(objColVals);
+        queryStr += ' WHERE ';
+        queryStr += condition;
 
-        console.log(queryString)
+        console.log(queryStr)
 
-        connection.query(queryString, function (err, result) {
+        connection.query(queryStr, function (err, result) {
             if (err) throw err;
             cb(result);
         });

@@ -1,14 +1,19 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Eat-Da-Burger!</h1>
+        <p>Welcome to our new restaurant! Add burgers you'd like to try to your list and keep track of them. Devour the best ones first, and if you pick, you have to go again!</p>
+    </div>
+</div>
+
+<div class="card">
 <div class="container">
     <div class="row">
 
-        <h1>Eat-Da-Burger!</h1>
-        <p>You love burgers! You've stuffed your face with several burgers, but you have an insatiable appetite and lust for
-            more. Throw up the burgers on the left and consume the uneated ones on the right. Ya pig!</p>
         <div class="col-sm-4">
 
-            <h2>Burgers you've eaten!</h2>
+            <h2>Burgers devoured:</h2>
 
-            <ul>
+            <ol>
                 {{#each burgers}} {{#unless this.devoured}}
                 <li>
                     {{this.burger_name}}
@@ -19,12 +24,12 @@
                     </form>
                 </li>
                 {{/unless}} {{/each}}
-            </ul>
+            </ol>
         </div>
 
         <div class="col-sm-4">
-            <h2>Burgers to devour!</h2>
-            <ul>
+            <h2>Burgers to try:</h2>
+            <ol>
                 {{#each burgers}} {{#if this.devoured}}
                 <li>
                     {{this.burger_name}}
@@ -35,29 +40,31 @@
                     </form>
                 </li>
                 {{/if}} {{/each}}
-            </ul>
+            </ol>
         </div>
 
         <div class="col-sm-4">
-            <h2>Add a Burger</h2>
+            <h2>Add a burger:</h2>
             <form class="create-update-form" action="burgers/create" method="POST">
 
                 <div class="form-group">
-                    <label for="bu">Burger Name:</label>
+                    <label for="name">Name:</label>
                     <input type="text" id="bu" name="burger_name">
                 </div>
 
                 <div class="form-group">
-                    <label for="slee">Devoured?</label>
+                    <label for="devoured">Devoured?</label>
                     <br>
-                    <input type="radio" name="devoured" value="0" checked> Devoured
+                    <input type="radio" name="devoured" value="0"> Devoured
                     <br>
                     <input type="radio" name="devoured" value="1"> Not Devoured
                 </div>
 
-                <button type="submit" class="btn btn-primary">Add Burger</button>
+                <button type="submit" class="btn">Add Burger</button>
             </form>
         </div>
 
     </div>
+</div>
+
 </div>

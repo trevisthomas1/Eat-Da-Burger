@@ -1,18 +1,18 @@
 var orm = require("../config/orm");
 
 var burger = {
-    selectAll: function (tableInput, cb) {
-        orm.selectAll(tableInput, function (result) {
+    selectAll: function (input, cb) {
+        orm.selectAll(input, function (result) {
             cb(result);
         });
     },
-    insertOne: function (tableInput, burgerName, devoured, cb) {
-        orm.insertOne(tableInput, burgerName, devoured, function (result) {
+    create: function (input, burgerName, devoured, cb) {
+        orm.create(input, burgerName, devoured, function (result) {
             cb(result);
         });
     },
-    updateOne: function (tableInput, objColVals, condition, cb) {
-        orm.updateOne(tableInput, objColVals, condition, function (result) {
+    update: function (input, objColVals, condition, cb) {
+        orm.update(input, objColVals, condition, function (result) {
             cb(result);
         });
     }

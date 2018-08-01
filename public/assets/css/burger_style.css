@@ -1,9 +1,9 @@
  body {
-     background: url("../img/burger.png") no-repeat fixed center;
- }
-
- h1 {
-     text-align: center;
+     background: url("../img/Shade-Burger-YOD-studio-11.jpg");
+     background-size: cover;
+     font-family: 'Anton', sans-serif;
+     text-align: center !important;
+     font-size: 24px;
  }
 
  p {
@@ -12,12 +12,34 @@
      font-size: 15px;
  }
 
- h1, h2, li {
+ h1 {
+     padding-left: 3%;
+ }
+
+ h1, h2 {
      font-weight: bold;
+     text-decoration-line: underline;
  }
 
  .row {
-     background-color: rgba(255, 115, 0, 0.66);
+     background-color: #a2693c;
      margin-top: 15px;
-     padding-bottom: 20px;
+     padding-bottom: 5px;
+ }
+
+ .jumbotron {
+     background: none !important;
+     color: white;
+     text-shadow: 2px 2px black;
+     max-height: 10em;
+     padding-bottom: 10em;
+     text-align: center !important;
+ }
+
+ .card {
+     border-color: white;
+ }
+
+ .rounded {
+     border-radius: 10px;
  }
